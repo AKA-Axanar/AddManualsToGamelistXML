@@ -1,0 +1,23 @@
+AddManualsToGamelistXML : by Steve Simpson (A.K.A. Axanar)
+Copyright 2024 by Stephen Simpson, (Steve Simpson, A.K.A. Axanar)
+under the MIT Open Source license.  See License.txt.
+
+This program reads the roms sub-directories for gamelist.xml files and checks for the existence of a manual tag in the xml file.
+If the manual tag does not exist and there is a manual file in the media/manuals directory with the same name as the game
+it adds a <manual> xml tag to the xml file.  If it doesn't find a manual file it writes the game name to missing_manuals.txt.
+Run this program in the roms directory
+
+Skraper can scrape game manuals but for some reason it doesn't add
+the path to the manual as an xml tag in gamelist.xml.  If you hav
+scraped manuals with Skraper you can run this app in the rom
+folder to add them all to the gamelist.xml files
+You only need to do this once until you add more games and run
+Skraper again
+
+A -r option will remove the manual tags if it points to media/manuals
+This is useful to test the add function or add again from sc
+-r will not remove any manual tags that do not point to the media/manuals director
+as the add routine will only add manual tags back in that are in the media/manuals directory
+This is to prevent removing manual tags that were added manually or in some other way
+For example the manual tags in PICOwesome point to a different directory and the gamelist.xm
+is created using his own program specially made for PICOwesome
